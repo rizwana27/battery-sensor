@@ -1,11 +1,13 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Server, BellRing, Settings, Zap } from 'lucide-react'
+import { LayoutDashboard, Server, BellRing, Settings, Zap, Sun, Moon } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
 
 interface SidebarProps {
   criticalCount: number
 }
 
 export default function Sidebar({ criticalCount }: SidebarProps) {
+  const { theme, toggleTheme } = useTheme()
   const links = [
     { to: '/',        icon: LayoutDashboard, label: 'Live Monitor' },
     { to: '/fleet',   icon: Server,          label: 'Fleet Overview' },
@@ -55,11 +57,18 @@ export default function Sidebar({ criticalCount }: SidebarProps) {
       </nav>
 
       {/* Footer */}
-      <div className="px-5 py-4 border-t border-ev-border">
+      <div className="px-5 py-4 border-t border-ev-border flex items-center justify-between">
         <div className="text-[10px] text-ev-muted font-mono">
           <div className="text-ev-accent/60">● LIVE</div>
           <div className="mt-0.5">2s refresh interval</div>
         </div>
+        <button
+          onClick={toggleTheme}
+          title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          className="w-7 h-7 flex items-center justify-center rounded-lg border border-ev-border hover:border-ev-accent/40 text-ev-muted hover:text-ev-accent transition-all"
+        >
+          {theme === 'dark' ? <Sun size={13} /> : <Moon size={13} />}
+        </button>
       </div>
     </aside>
   )

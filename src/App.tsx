@@ -5,6 +5,7 @@ import FleetOverview from './pages/FleetOverview'
 import AlertsPage from './pages/AlertsPage'
 import SettingsPage from './pages/SettingsPage'
 import { useSensorData } from './hooks/useSensorData'
+import { ThemeProvider } from './context/ThemeContext'
 
 export default function App() {
   const {
@@ -21,6 +22,7 @@ export default function App() {
   } = useSensorData()
 
   return (
+    <ThemeProvider>
     <BrowserRouter>
       <div className="flex h-screen overflow-hidden bg-ev-bg">
         <Sidebar criticalCount={criticalCount} />
@@ -64,5 +66,6 @@ export default function App() {
         </main>
       </div>
     </BrowserRouter>
+    </ThemeProvider>
   )
 }
