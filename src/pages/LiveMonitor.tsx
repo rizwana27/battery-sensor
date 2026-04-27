@@ -148,7 +148,7 @@ export default function LiveMonitor({ devices, thresholds, isPaused, setIsPaused
           decimals={1}
         />
 
-        {/* SOC Gauge replacement — SoC history as bar */}
+        {/* SOC Gauge replacement - SoC history as bar */}
         <div className="bg-ev-panel border border-ev-border rounded-xl p-4 flex flex-col gap-3">
           <div className="text-xs text-ev-muted uppercase tracking-widest font-mono">Battery Health</div>
           <div className="flex-1 flex flex-col justify-center gap-2">

@@ -9,12 +9,12 @@ export const DEFAULT_THRESHOLDS: Thresholds = {
 }
 
 const DEVICE_CONFIGS = [
-  { id: 'dev-001', name: 'Cell Pack Alpha',   location: 'Bay A — Rack 1', chemistry: 'NMC' as const, cellCount: 14 },
-  { id: 'dev-002', name: 'Cell Pack Beta',    location: 'Bay A — Rack 2', chemistry: 'LFP' as const, cellCount: 16 },
-  { id: 'dev-003', name: 'Cell Pack Gamma',   location: 'Bay B — Rack 1', chemistry: 'NCA' as const, cellCount: 12 },
-  { id: 'dev-004', name: 'Field Unit #7',     location: 'EV Fleet — Unit 7', chemistry: 'NMC' as const, cellCount: 96 },
-  { id: 'dev-005', name: 'Test Bench C2',     location: 'Lab — Station 3', chemistry: 'LFP' as const, cellCount: 8  },
-  { id: 'dev-006', name: 'Prototype X1',      location: 'R&D — Bench 2',  chemistry: 'NCA' as const, cellCount: 20 },
+  { id: 'dev-001', name: 'Cell Pack Alpha',   location: 'Bay A - Rack 1', chemistry: 'NMC' as const, cellCount: 14 },
+  { id: 'dev-002', name: 'Cell Pack Beta',    location: 'Bay A - Rack 2', chemistry: 'LFP' as const, cellCount: 16 },
+  { id: 'dev-003', name: 'Cell Pack Gamma',   location: 'Bay B - Rack 1', chemistry: 'NCA' as const, cellCount: 12 },
+  { id: 'dev-004', name: 'Field Unit #7',     location: 'EV Fleet - Unit 7', chemistry: 'NMC' as const, cellCount: 96 },
+  { id: 'dev-005', name: 'Test Bench C2',     location: 'Lab - Station 3', chemistry: 'LFP' as const, cellCount: 8  },
+  { id: 'dev-006', name: 'Prototype X1',      location: 'R&D - Bench 2',  chemistry: 'NCA' as const, cellCount: 20 },
 ]
 
 function lerp(a: number, b: number, t: number) {
@@ -115,7 +115,7 @@ export function checkThresholds(
         value: latest.voltage,
         check: () => latest.voltage < thresholds.voltage.min || latest.voltage > thresholds.voltage.max,
         severity: latest.voltage < 2.9 || latest.voltage > 4.25 ? 'critical' : 'warning',
-        message: `Voltage ${latest.voltage.toFixed(3)}V out of range [${thresholds.voltage.min}–${thresholds.voltage.max}V]`,
+        message: `Voltage ${latest.voltage.toFixed(3)}V out of range [${thresholds.voltage.min}-${thresholds.voltage.max}V]`,
       },
       {
         metric: 'soc',
