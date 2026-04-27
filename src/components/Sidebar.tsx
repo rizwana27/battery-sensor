@@ -24,7 +24,7 @@ export default function Sidebar({ criticalCount }: SidebarProps) {
         </div>
         <div>
           <div className="font-mono text-sm font-semibold text-ev-accent tracking-wider">EVident</div>
-          <div className="text-[10px] text-ev-muted tracking-widest uppercase">Sensor Portal</div>
+          <div className="text-[10px] text-ev-muted tracking-widest uppercase">Battery Portal</div>
         </div>
       </div>
 
